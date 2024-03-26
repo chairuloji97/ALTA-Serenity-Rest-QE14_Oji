@@ -10,8 +10,9 @@ Feature: Delayed Response
     And Validate json schema "DelayedResponseJsonSchema.json"
 
 #    Negative
+  @Tugas
   Scenario: Get delayed response with invalid parameter
     Given Get delayed response with invalid parameter "clbk1"
     When Send request get delayed response
-    Then Status code should be 404
+    Then Status code should be 400
 
