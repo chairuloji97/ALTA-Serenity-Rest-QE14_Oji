@@ -16,7 +16,7 @@ Feature: Update User
   Scenario Outline: Update user with valid json and invalid user id
     Given Update user with valid json "<json>" and invalid user id <id>
     When Send request update user
-    Then Status code should be 404
+    Then Status code should be 400
     Examples:
       | id   | json             |
       | -198 | UpdateUser1.json |
@@ -27,7 +27,7 @@ Feature: Update User
   Scenario Outline: Update user with invalid json and valid user id
     Given Update user with invalid json "<json>" and valid user id <id>
     When Send request update user
-    Then Status code should be 404
+    Then Status code should be 400
     Examples:
       | id | json                    |
       | 4  | UpdateUserInvalid1.json |

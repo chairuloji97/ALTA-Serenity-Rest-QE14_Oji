@@ -17,7 +17,7 @@ Feature: Create User
   Scenario Outline: Post create user with invalid json
     Given Create user with invalid json "InvalidCreateUserTugas.json"
     When Send request create new User
-    Then Status code should be 404
+    Then Status code should be 400
     Examples:
       | name     |
       | Napoleon |

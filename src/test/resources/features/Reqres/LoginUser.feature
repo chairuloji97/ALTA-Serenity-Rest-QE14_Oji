@@ -13,7 +13,7 @@ Feature: Login User
 #    Negative
 #  Login Unsuccessful
   @Tugas
-  Scenario Outline: Post login user with invalid email and invalid password
+  Scenario Outline: Post login user with invalid json
     Given Login user with invalid JSON "<JSON>"
     When Send request post login user
     Then Status code should be 400
@@ -21,4 +21,4 @@ Feature: Login User
       |                                    | JSON                                         |
       | Invalid Email and Valid Password   | InvalidEmailLoginUser.json                   |
       | Valid Email and Invalid Password   | InvalidPasswordLoginUser.json                |
-      | Invalid Email and inValid Password | InvalidEmailAndInvalidPasswordLoginUser.json |
+      | Invalid Email and invalid Password | InvalidEmailAndInvalidPasswordLoginUser.json |
