@@ -16,10 +16,10 @@ import static org.hamcrest.Matchers.equalTo;
 public class CreateUserTugasStepDef {
     @Steps
     ReqresAPI reqresAPI;
-
+//Positive
     @Given("Create user with valid json valid json {string}")
     public void createUserWithValidJsonValidJson(String json) {
-        File jsonFile = new File(Constants.REQ_BODY + json);
+        File jsonFile = new File(Constants.REQ_BODY+json);
         reqresAPI.postCreateUser(jsonFile);
     }
 
@@ -33,5 +33,11 @@ public class CreateUserTugasStepDef {
         SerenityRest.and()
                 .body(ReqresResponses.NAME, equalTo(name1))
                 .body(ReqresResponses.JOB, equalTo(job1));
+    }
+//Negative
+    @Given("Create user with invalid json {string}")
+    public void createUserWithInvalidJson(String json) {
+        File jsonFile = new File(Constants.REQ_BODY+json);
+        reqresAPI.postCreateUser(jsonFile);
     }
 }
