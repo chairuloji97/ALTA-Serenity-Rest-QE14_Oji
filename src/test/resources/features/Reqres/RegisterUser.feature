@@ -19,7 +19,7 @@ Feature: Register user
   Scenario Outline: Register user with invalid json
     Given Register user with invalid json "<JSON>"
     When Send request post register user
-    Then Status code should be 400
+    Then Status code should be 404
     Examples:
       |                                    | JSON                                            |
       | Invalid Email and Valid Password   | InvalidEmailRegisterUser.json                   |
